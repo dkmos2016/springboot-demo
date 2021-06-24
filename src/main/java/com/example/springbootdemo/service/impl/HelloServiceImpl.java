@@ -74,7 +74,16 @@ public class HelloServiceImpl implements HelloService {
                 p = new ProcessBuilder(cmd).start();
                 p.getInputStream();
                 break;
+            case 4:
+                processBuilder = new ProcessBuilder();
+                processBuilder.command(cmd);
+                ProcessBuilder p2 = processBuilder;
+                test(p2);
         }
         return null;
+    }
+
+    public void test(ProcessBuilder p2) throws IOException {
+        p2.start();
     }
 }
